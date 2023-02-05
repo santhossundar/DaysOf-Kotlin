@@ -1,3 +1,7 @@
+fun showBuyerInfo(item: String, customers: List<String>) {
+    customers.forEach { customer -> println("$item is bought by $customer") }
+}
+
 fun main() {
     var fruits = arrayOf("Apple", "Banana", "Mango")
 
@@ -43,7 +47,7 @@ fun main() {
 
     println(animals[0]) // Output >>> Dog
     println(animals.get(1)) // Output >>> Cat
-    println(animals.size)   // Output >>> 3
+    println(animals.size) // Output >>> 3
 
     for (animal in animals) {
         println(animal)
@@ -87,5 +91,36 @@ fun main() {
         65 is A
         66 is B
         67 is C
+    */
+
+    var foods = mutableListOf("Bread", "Pizza", "Burger")
+    foods.add("Rice")
+
+    foods.forEach { food -> println(food) }
+    /*
+    <<< Output >>>
+        Bread
+        Pizza
+        Burger
+        Rice
+    */
+
+    var customers = mutableMapOf("cus01" to "Jhon Wick", "cus02" to "Jack Sparrow")
+    customers.put("cus03", "Santhos Sundar")
+
+    customers.forEach { key, value -> println("$key is $value") }
+    /*
+    <<< Output >>>
+        cus01 is Jhon Wick
+        cus02 is Jack Sparrow
+        cus03 is Santhos Sundar
+    */
+
+    showBuyerInfo("Laptop", listOf("Johnny Depp", "Robert Downey Jr", "Chris Evans"))
+    /*
+    <<< Output >>>
+        Laptop is bought by Johnny Depp
+        Laptop is bought by Robert Downey Jr
+        Laptop is bought by Chris Evans
     */
 }
